@@ -1,7 +1,13 @@
+<%= will_paginate @posts, :page_links => false %>
+
 <% @posts.each do |post| %>
-  <h2><%= post.title %></h2>
-  <div>
-    <%= truncate(post.body, :length => 25) %>
+
+  <div class="card border-secondary mb-3">
+    <div class="card-body">
+      <h5 class="card-title text-info">Title:<%= post.title %></h5>
+      <p class="card-text"><%= truncate(post.body, :length => 50) %></p>
+      <%= link_to "Read Posts", post,class: "btn btn-outline-danger" %>
+    </div>
   </div>
-  <%= link_to "Read Posts", post %>
+
 <% end %>

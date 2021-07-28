@@ -1,3 +1,4 @@
+
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>
     <%= f.label :name %>
@@ -9,6 +10,6 @@
   </p>
   <br>
   <p>
-    <%= f.submit "Add a Comment" %>
+    <%= f.submit "Add a Comment", class: "btn btn-info"%>
   </p>
 <% end %>
